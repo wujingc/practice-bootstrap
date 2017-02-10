@@ -1,0 +1,134 @@
+// 自定义混入
+.btn-feature{
+  .button-variant(@btn-feature-color;@btn-feature-bg;@btn-feature-border);
+}
+
+
+//
+//page content
+//-------------------
+.page-contents{
+  padding-top:20px;
+  padding-bottom:40px;
+  @media (max-width:@screen-xs-max){
+    div[class*="col-"]{
+      clear:both;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+//底部的图标栏
+footer .social{
+  margin:0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  >li{
+    display: inline-block;
+    >a{
+      display: inline-block;
+      font-size: 18px;
+      line-height: 30px;
+      .square(30px);
+      border-radius: 36px;
+      background-color: @gray-light;
+      color:#fff;
+      margin:0 3px 3px 0;
+      &:hover{
+        text-decoration: none;
+        background-color: @link-hover-color;
+      }
+    }
+  }
+}
+
+// 底部样式
+footer{
+  padding-top: 24px;
+  padding-bottom: 36px;
+  p{
+  text-align: center;
+}
+}
+
+//最顶部的实用导航
+header{
+  .banner-brand{
+    padding-top: 40px;
+  }
+  > .container{
+    position: relative;
+  }
+  .utility-nav{
+    z-index: 1999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    >ul{
+      list-style: none;
+      >li{
+        float: left;
+        >a{
+          display: inline-block;
+          padding:8px 12px;
+          @media(max-width:(@grid-float-breakpoint - 1)){
+            span{
+              .sr-only();
+            }
+            .icon{
+              font-size: 2em;
+              line-height: 1.2;
+            }
+          }
+          &:hover{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 调整水平导航条颜色
+
+@media(min-width:@grid-float-breakpoint){
+  .navbar-default{
+    .navbar-inverse();
+    .navbar-nav>li>a{
+      text-transform: uppercase;
+      font-size: 100%;
+      font-weight: bold;
+    }
+  }
+}
+
+//调整标题，字体和按钮
+main{
+  [class*="col-"]{
+    h1,h2,h3,h4{
+      clear: both;
+      padding-top: 20px;
+      @media(min-width:@screen-sm-min){
+      &:first-child{
+        margin-top: 0;
+        padding-top: 0;
+      }
+      }
+    }
+  }
+}
+
+// 增大主栏
+.content-primary{
+  font-size: @font-size-large;
+}
+main .third{
+  font-size: @font-size-small;
+}
+main{
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+
